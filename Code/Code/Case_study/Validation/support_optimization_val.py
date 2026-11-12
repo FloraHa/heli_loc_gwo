@@ -49,9 +49,9 @@ def read_optimization_results(date, folder_results="Case_study/Results/MCLP", pa
 
     if date[2] < 10:
         # Read the basis data that has been used for optimization
-        data_df_bases = read_base_data(f"Data/output_tables/output_tables/FC_{date[0]}_{month_string}_Intensite_{date[0]}0{date[1]}0{date[2]}_ZPI_table.csv")
+        data_df_bases = read_base_data(f"Data/HF_output_tables/FC_{date[0]}_{month_string}_Intensite_{date[0]}0{date[1]}0{date[2]}_ZPI_table.csv")
     else:
-        data_df_bases = read_base_data(f"Data/output_tables/output_tables/FC_{date[0]}_{month_string}_Intensite_{date[0]}0{date[1]}{date[2]}_ZPI_table.csv")
+        data_df_bases = read_base_data(f"Data/HFI_output_tables/FC_{date[0]}_{month_string}_Intensite_{date[0]}0{date[1]}{date[2]}_ZPI_table.csv")
 
     if date[2] < 10:
         # Read the optimization results
