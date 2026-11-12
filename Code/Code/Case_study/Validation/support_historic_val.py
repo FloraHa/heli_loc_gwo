@@ -15,7 +15,7 @@ def read_bases():
     This function reads the bases.
     """
 
-    data = pd.read_excel("Data/bases_sopfeu_2018-2022_VF_index.xlsx")
+    data = pd.read_excel("Data/Processed_data/bases_sopfeu_2018-2022_VF_index.xlsx")
 
     dates = data.iloc[:, 0]  # Column A contains dates
     bases_data = data.iloc[:, 1:]  # The rest of the columns contain base indices
