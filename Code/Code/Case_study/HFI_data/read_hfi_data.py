@@ -25,7 +25,7 @@ def read_hfi_data_raw(date):
     elif date[1] == 7:
         month_string = "juillet"
 
-    path = f"Data/donnees_florentina/donnees_florentina/{date[0]}_{month_string}.gdb"
+    path = f"Data/HFI_data/{date[0]}_{month_string}.gdb"
     layers = fiona.listlayers(path)
 
     desired_date = datetime(date[0], date[1], date[2])
@@ -121,9 +121,9 @@ def read_file_hfi_preprocessed_data(date):
         month_string = "juillet"
 
     if date[2] < 10:
-        path = f"Data/output_tables/output_tables/FC_{date[0]}_{month_string}_Intensite_{date[0]}0{date[1]}0{date[2]}_ZPI_table.csv"
+        path = f"Data/HFI_output_tables/FC_{date[0]}_{month_string}_Intensite_{date[0]}0{date[1]}0{date[2]}_ZPI_table.csv"
     else:
-        path = f"Data/output_tables/output_tables/FC_{date[0]}_{month_string}_Intensite_{date[0]}0{date[1]}{date[2]}_ZPI_table.csv"
+        path = f"Data/HFI_output_tables/FC_{date[0]}_{month_string}_Intensite_{date[0]}0{date[1]}{date[2]}_ZPI_table.csv"
 
     hfi_data_from_csv = pd.read_csv(path)
 
