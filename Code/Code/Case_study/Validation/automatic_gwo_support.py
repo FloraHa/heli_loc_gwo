@@ -34,10 +34,10 @@ def validate_day_gwo(date, params_fire, params_attack, params_sim_validation, pa
     Preprocess the data
     """
 
-    districts, lambda_j, pot_locations, travel_distances, travel_distances_across_zones, regional_data, fires = read_params("Case_study/Processed_data", zone_inc_only=params_case_study.zone_inc_only)
-    zpi = gpd.read_file("Data/donnees_sopfeu_opti/donnees_sopfeu_opti/ZPI.shp", layer='ZPI').to_crs(4326)
+    districts, lambda_j, pot_locations, travel_distances, travel_distances_across_zones, regional_data, fires = read_params("Data", zone_inc_only=params_case_study.zone_inc_only)
+    zpi = gpd.read_file("Data/ZPI/ZPI.shp", layer='ZPI').to_crs(4326)
 
-    fire_data = pd.read_excel('Data/donnees_feu_frederic/bdobjop_2022INC_cropped.xlsx')
+    fire_data = pd.read_excel('Data/Fire_data/bdobjop_2022INC_cropped.xlsx')
     gdf_fire_data = gpd.GeoDataFrame(
         fire_data, geometry=gpd.points_from_xy(fire_data.iLon, fire_data.iLat), crs="EPSG:4326"
     )
@@ -56,7 +56,7 @@ def validate_day_gwo(date, params_fire, params_attack, params_sim_validation, pa
     if params_case_study.hfi_data_base == "preprocessed":
         data_mclp = convert_preprocessed_hfi_data_mclp(hfi_csv, params_attack.dispatch_range)
     elif params_case_study.hfi_data_base == "raw":
-        distance_df = pd.read_csv(f"Case_study/Processed_data/HFI_distances/hfi_distance_{date[0]}_{date[1]}_{date[2]}.csv")
+        distance_df = pd.read_csv(f"Data/Processed_data/HFI_distances/hfi_distance_{date[0]}_{date[1]}_{date[2]}.csv")
         data_mclp = convert_raw_data_mclp(distance_df, params_attack.dispatch_range)
         # print(data_mclp["primary_facility_ids"])
 
