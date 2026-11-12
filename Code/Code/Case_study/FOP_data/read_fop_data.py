@@ -14,13 +14,13 @@ def read_fop_data(date, region_data, districts):
     month_string = f"{date[1]:02d}"
     date_string = f"{date[0]}{month_string}{day_string}"
 
-    path_marginal_probability_fire_occurence = f"Data/fop_output/{date_string}/mPFi_MargProbUpperAtmosphericIndicesStrikeFire_{date_string}00_{date_string}.tif"
-    path_unconditional_probability_heli_requirement = f"Data/fop_output/{date_string}/pLGFi_ProbLightningUpperAtmosphericIndicesCausedLargeFireGrid_{date_string}00_{date_string}.tif"
+    path_marginal_probability_fire_occurence = f"Data/FOP_data/{date_string}/mPFi_MargProbUpperAtmosphericIndicesStrikeFire_{date_string}00_{date_string}.tif"
+    path_unconditional_probability_heli_requirement = f"Data/FOP_data/{date_string}/pLGFi_ProbLightningUpperAtmosphericIndicesCausedLargeFireGrid_{date_string}00_{date_string}.tif"
 
-    path_marginal_probability_fire_occurence = f"Data/fop_output/{date_string}/mPFs_MargProbLightiningStrikeFire_{date_string}00_{date_string}.tif"
-    path_unconditional_probability_heli_requirement = f"Data/fop_output/{date_string}/pLGFs_ProbLightningStrikeCausedLargeFireGrid_{date_string}00_{date_string}.tif"
+    path_marginal_probability_fire_occurence = f"Data/FOP_data/{date_string}/mPFs_MargProbLightiningStrikeFire_{date_string}00_{date_string}.tif"
+    path_unconditional_probability_heli_requirement = f"Data/FOP_data/{date_string}/pLGFs_ProbLightningStrikeCausedLargeFireGrid_{date_string}00_{date_string}.tif"
 
-    fop_lightening_path = f"Data/fop_output/{date_string}/mPFs_MargProbLightiningStrikeFire_{date_string}00_{date_string}.tif"
+    fop_lightening_path = f"Data/FOP_data/{date_string}/mPFs_MargProbLightiningStrikeFire_{date_string}00_{date_string}.tif"
 
     # --- Project region_data to raster CRS ---
     with rasterio.open(path_marginal_probability_fire_occurence) as src:
